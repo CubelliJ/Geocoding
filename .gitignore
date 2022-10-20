@@ -4,3 +4,6 @@
 *.gz
 *.whl
 *.json
+/src/easygeo.egg-info/*
+/build/*
+/dist/*

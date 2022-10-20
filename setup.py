@@ -5,12 +5,12 @@ with open ("README.md", "r") as fh:
 
 setup(
     name="easygeo", 
-    version="0.0.1",
+    version="0.0.2",
     author="Joaquin Cubelli",
     author_email="jcubellidl@gmail.com",
     url="https://github.com/CubelliJ/easyGeo",
     description="Simple library that allows to geocode using Nominatim or Google V3 API",
-    py_modules=["geocoder"],
+    py_modules=["easygeo"],
     package_dir={"": "src"},
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
