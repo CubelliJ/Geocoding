@@ -1,4 +1,4 @@
-# Geocoding
+# easygeo
  Geocoding library that makes geocodification easier (and possibly cheaper). 
  It's a wrapper for geopy geocoding tools. And at the moment it allows to use Google's V3 or Nominatim API.
 
@@ -28,7 +28,7 @@ g.save_cache()
 
 ## Development:
 
-In case you want to install simplegeo along with the tools you need to develop and run the tests, run the following in your virtualenv.
+In case you want to install easygeo along with the tools you need to develop and run the tests, run the following in your virtualenv.
 
 ```bash
 $ pip install -e .[dev]
