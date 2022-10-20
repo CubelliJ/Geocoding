@@ -99,7 +99,7 @@ class GeoCode(object):
             
     # Geocode transforms the address into coordinates using the selected geolocation engine.
     # When a request was already queried, it searches it in the cache, to save resources.
-    def geocode(self, address, debug = False, save = True):
+    def geocode(self, address, debug = False, save = False):
         if address not in self.cache:
             try:
                 location = self.geocoder(address).raw
