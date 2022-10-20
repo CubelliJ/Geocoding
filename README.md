@@ -7,13 +7,13 @@
 You can install this package using pip.
 
 ```python
-pip install simplegeo
+pip install easygeo
 ```
 
 ## Usage:
 
 ```python
-from simplegeo import GeoCode
+from easygeo import GeoCode
 
 g = GeoCode(method="Nominatim", domain="nominatim.openstreetmap.org")
 
