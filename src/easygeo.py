@@ -17,7 +17,7 @@ class GeoCode(object):
     (unless for some strange reason this becomes like the backbone of the internet, from which I'm sure 
     people far more versed coding will have their eyes bleed out first, and then try to improve on this c:)
     """
-    def __init__(self, method:str = "GoogleV3", domain:str = "maps.google.cl", api_key:str = None, cache_file:str = None, min_delay:float = None):
+    def __init__(self, method:str = "Nominatim", domain:str = "maps.google.cl", api_key:str = None, cache_file:str = None, min_delay:float = None):
         """ 
         Class constructor:
         Method -> string: Current options are: GoogleV3, Nominatim
@@ -64,7 +64,8 @@ class GeoCode(object):
             if self.min_delay_seconds is None:
                 self.min_delay_seconds = 0.02 # Maximum of 50 requests per second.
         else:
-            geolocator = Nominatim(user_agent="LT")
+            geolocator = Nominatim(user_agent="LT",
+                                   domain = self.domain)
             if self.min_delay_seconds is None:
                 self.min_delay_seconds = 1
         return geolocator
