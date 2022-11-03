@@ -65,7 +65,8 @@ class GeoCode(object):
                 self.min_delay_seconds = 0.02 # Maximum of 50 requests per second.
         else:
             geolocator = Nominatim(user_agent="LT",
-                                   domain = self.domain)
+                                   domain = self.domain,
+                                   scheme='http')
             if self.min_delay_seconds is None:
                 self.min_delay_seconds = 1
         return geolocator
