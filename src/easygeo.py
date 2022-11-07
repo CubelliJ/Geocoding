@@ -32,9 +32,9 @@ class GeoCode(object):
         self.domain = domain
         self.api_key = api_key
         self.min_delay_seconds = None
+        self.geolocator = self.set_geolocator()
         if min_delay is not None:
             self.min_delay_seconds = min_delay
-        self.geolocator = self.set_geolocator()
         self.geocoder = RateLimiter(self.geolocator.geocode, min_delay_seconds=self.min_delay_seconds)
         
         # Cache file
@@ -61,13 +61,13 @@ class GeoCode(object):
             geolocator = GoogleV3(user_agent="LT", 
                                   domain = self.domain, 
                                   api_key = self.api_key)
-            if self.min_delay_seconds is None:
-                self.min_delay_seconds = 0.02 # Maximum of 50 requests per second.
+            self.min_delay_seconds = 0.02 # Maximum of 50 requests per second.
         else:
-            geolocator = Nominatim(user_agent="LT",
-                                   domain = self.domain,
-                                   scheme='http')
-            if self.min_delay_seconds is None:
+            if self.domain != "maps.google.cl":
+                geolocator = Nominatim(user_agent="LT", domain = self.domain, scheme='http')
+                self.min_delay_seconds = 0.02
+            else:
+                geolocator = Nominatim(user_agent="LT", scheme='http')
                 self.min_delay_seconds = 1
         return geolocator
     

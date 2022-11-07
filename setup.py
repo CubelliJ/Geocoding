@@ -5,7 +5,7 @@ with open ("README.md", "r") as fh:
 
 setup(
     name="easygeo", 
-    version="0.0.4",
+    version="0.0.6",
     author="Joaquin Cubelli",
     author_email="jcubellidl@gmail.com",
     url="https://github.com/CubelliJ/easyGeo",
